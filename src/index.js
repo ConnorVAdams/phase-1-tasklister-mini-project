@@ -50,9 +50,36 @@ const createTask = (input, priority) => {
 };
 
 //Creates a sort button for users to sort tasks based on their priority
+//It's possible that this could be destructured, now that I know what that is?
 const sortTasks = () => {
-  console.log('hi');
+  const allTasks = []; //Create four divs for high, med, and low priority
+
+  const createNodeList = (class, id) => {
+    const listId = 
+  }
+
+  const hiPri = document.createElement('div'); //This is where an object would be handy to iterate through for the right keys instead of hard coding all the high, low, etc.
+  hiPri.id = 'hiPriDiv';
+  const hiNodes = document.querySelectorAll('.high-priority');
+  allTasks.push(hiPri);
+
+  const medPri = document.createElement('div');
+  medPri.id = 'medPriDiv';
+  const medNodes = document.querySelectorAll('.medium-priority');
+  allTasks.push(medPri);
+
+  const lowPri = document.createElement('div');
+  lowPri.id = 'lowPriDiv';
+  const lowNodes = document.querySelectorAll('.low-priority');
+  allTasks.push(lowPri);
+
+  const noPri = document.createElement('div');
+  noPri.id = 'noPriDiv';
+  const noNodes = document.querySelectorAll('.no-priority');
+  allTasks.push(noPri);
+  return allTasks;
 };
+
 
 const sortBtn = document.querySelector('#sort');
 sortBtn.addEventListener('click', sortTasks);
@@ -63,15 +90,7 @@ sortBtn.addEventListener('click', sortTasks);
   //Task gets removed and appended accordingly
 // };
 
-//Create three divs for high, med, and low priority
-// const makePriorities = () => {
-//   let counter = 0;
-//   while (counter < 3) {
-//   const newDiv = document.createElement('div');
-//   toDoList.appendChild(newDiv);
-//   counter ++;
-//   };
-// };
+
 
 //Iterate through the elements
 // const sort = (e) => {
