@@ -35,3 +35,11 @@ button {
   border-radius: 5px;
   box-shadow: 2px 5px 5px #333;
 }
+
+p {
+  display: inline;
+}
+
+button {
+  margin-left: 10px
+}
