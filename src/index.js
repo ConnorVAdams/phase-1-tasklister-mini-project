@@ -48,4 +48,21 @@ const createTask = (input, priority) => {
   return task;
 };
 
-//
+//Creates a sort button for users to sort tasks based on their priority
+const sortTasks = () => {
+
+
+  //If statement querying for class selector
+  //Task gets removed and appended accordingly
+};
+
+//Create three divs for high, med, and low priority
+const makePriorities = () => {
+  let counter = 0;
+  while (counter < 3) {
+  const newDiv = document.createElement('div');
+  toDoList.appendChild(newDiv);
+  counter ++;
+  };
+};
+

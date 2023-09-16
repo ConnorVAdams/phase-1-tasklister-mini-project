@@ -28,6 +28,9 @@ button {
 }
 
 #list {
+  display: flex;
+  position: relative;
+  flex-direction: column;
   margin: 10px;
   border: 1px solid #333;
   background: rgba(255, 255, 255, 0.75);
