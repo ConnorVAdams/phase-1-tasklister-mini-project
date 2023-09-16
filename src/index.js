@@ -40,6 +40,7 @@ const createTask = (input, priority) => {
   toDoList.appendChild(task); 
   let p = document.createElement('p'); //Creates p element 
   let btn = document.createElement('button'); //Creates button element
+  btn.className = 'delete'
   btn.addEventListener('click', handleDelete) //Invokes handleDelete when X is clicked
   task.appendChild(p); //Appends task to to-do list node
   task.appendChild(btn); //Appends X button beside task
@@ -50,19 +51,30 @@ const createTask = (input, priority) => {
 
 //Creates a sort button for users to sort tasks based on their priority
 const sortTasks = () => {
+  console.log('hi');
+};
 
+const sortBtn = document.querySelector('#sort');
+sortBtn.addEventListener('click', sortTasks);
+
+//   makePriorities();
 
   //If statement querying for class selector
   //Task gets removed and appended accordingly
-};
+// };
 
 //Create three divs for high, med, and low priority
-const makePriorities = () => {
-  let counter = 0;
-  while (counter < 3) {
-  const newDiv = document.createElement('div');
-  toDoList.appendChild(newDiv);
-  counter ++;
-  };
-};
+// const makePriorities = () => {
+//   let counter = 0;
+//   while (counter < 3) {
+//   const newDiv = document.createElement('div');
+//   toDoList.appendChild(newDiv);
+//   counter ++;
+//   };
+// };
 
+//Iterate through the elements
+// const sort = (e) => {
+
+//   for (child in nodeList.);
+// };

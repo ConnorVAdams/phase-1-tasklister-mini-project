@@ -31,6 +31,7 @@ button {
   display: flex;
   position: relative;
   flex-direction: column;
+  row-gap: 10px;
   margin: 10px;
   border: 1px solid #333;
   background: rgba(255, 255, 255, 0.75);
@@ -43,8 +44,11 @@ p {
   display: inline;
 }
 
-button {
-  margin-left: 10px
+.delete {
+  height: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 7px;
 }
 
 .high-priority {
@@ -57,4 +61,12 @@ button {
 
 .low-priority {
   background-color: green;
+}
+
+div #list > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 35px;
+  padding-left: 7px;
 }
