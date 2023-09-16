@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => { //Attaches an Event Listen
   const form = document.querySelector('form')
   form.addEventListener('submit', (e) => { //After the DOM loads, attaches an event listener to the to do list...
     e.preventDefault() //which prevents refreshing of the page upon input.
-    handleSubmit(e.target.todo.value); //handleSubmit triggers and captures the input via the ID of the input (n-t-d) on the target <form>
+    handleSubmit(e.target.todo.value, e.target.priority.value); //handleSubmit triggers and captures the input via the ID of the input (n-t-d) on the target <form>
     form.reset();
   });
 });
@@ -11,10 +11,31 @@ document.addEventListener("DOMContentLoaded", () => { //Attaches an Event Listen
 //Initialize variables for elemnents that will need to be accessed.
 const form = document.querySelector('form');
 const toDoList = document.querySelector('#list');
-const formInput = document.querySelector('submit');
 
 //Captures and posts task from user
-const handleSubmit = (input) => {
+const handleSubmit = (input, priority) => {
+  const newTask = createTask(input, priority);
+  priorityColor(newTask, priority);
+};
+
+// Delete handler to remove p and button elements when X is clicked.
+const handleDelete = (e) => {
+    e.target.parentNode.remove();
+};
+
+//Assigns a color to each task based on priority.
+const priorityColor = (task, priority) => {
+  if (priority === 'high') {
+    task.classList.add('high-priority');
+  } else if (priority === 'medium') {
+    task.classList.add('medium-priority');
+  } else if (priority === 'low') {
+    task.classList.add('low-priority');
+  };
+};
+
+//Creates a div for the task elements to live in.
+const createTask = (input, priority) => {
   let task = document.createElement('div'); //Creates a div element which will hold the input task and a delete button.
   toDoList.appendChild(task); 
   let p = document.createElement('p'); //Creates p element 
@@ -24,12 +45,7 @@ const handleSubmit = (input) => {
   task.appendChild(btn); //Appends X button beside task
   p.textContent = input; //Populates new p element with task
   btn.textContent = 'X';
+  return task;
 };
 
-// Delete handler to remove p and button elements when X is clicked.
-const handleDelete = (e) => {
-    e.target.parentNode.remove();
-};
-
-
-
+//

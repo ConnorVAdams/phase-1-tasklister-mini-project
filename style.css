@@ -43,3 +43,15 @@ p {
 button {
   margin-left: 10px
 }
+
+.high-priority {
+  background-color: red;
+}
+
+.medium-priority {
+  background-color: yellow;
+}
+
+.low-priority {
+  background-color: green;
+}
