@@ -19,16 +19,17 @@ const handleSubmit = (input) => {
   toDoList.appendChild(task); 
   let p = document.createElement('p'); //Creates p element 
   let btn = document.createElement('button'); //Creates button element
-  // btn.addEventListener('click', handleDelete()) //Invokes handleDelete when X is clicked
-  p.textContent = input; //Populates new p element with task
+  btn.addEventListener('click', handleDelete) //Invokes handleDelete when X is clicked
   task.appendChild(p); //Appends task to to-do list node
   task.appendChild(btn); //Appends X button beside task
-}
+  p.textContent = input; //Populates new p element with task
+  btn.textContent = 'X';
+};
 
 // Delete handler to remove p and button elements when X is clicked.
-// const handleDelete = (e) => {
-//   debugger
-//   e.target.
-// }
+const handleDelete = (e) => {
+    e.target.parentNode.remove();
+};
+
 
 
