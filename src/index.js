@@ -8,13 +8,14 @@ document.addEventListener("DOMContentLoaded", () => { //Attaches an Event Listen
   });
 });
 
-//Initialize variables for elemnents that will need to be accessed.
+//Initialize variables for elements that will need to be accessed.
 const form = document.querySelector('form');
 const toDoList = document.querySelector('#list');
 
 //Captures and posts task from user
 const handleSubmit = (input, priority) => {
-  const newTask = createTask(input, priority);
+  const newTask = createTask(input, priority);``
+  newTask.className = 'task'
   priorityColor(newTask, priority);
 };
 
@@ -31,7 +32,9 @@ const priorityColor = (task, priority) => {
     task.classList.add('medium-priority');
   } else if (priority === 'low') {
     task.classList.add('low-priority');
-  };
+  } else {
+    task.classList.add('no-priority')
+  }
 };
 
 //Creates a div for the task elements to live in.
@@ -49,51 +52,49 @@ const createTask = (input, priority) => {
   return task;
 };
 
+// removeTaskFromDocument = (task) => {
+//   tasks = document.getElementsByClassName('task');
+//   for (task of tasks) {
+
+//   }
+// }
+
 //Creates a sort button for users to sort tasks based on their priority
 //It's possible that this could be destructured, now that I know what that is?
 const sortTasks = () => {
-  const allTasks = []; //Create four divs for high, med, and low priority
+  //Creates a div for priority class.
+  const createPriorities = (nodeClass, divId) => {
+    const priDiv = document.createElement('div');
+    priDiv.id = divId.toString();
+    priDiv.className = "priDiv";
+    priDiv.textContent = `${divId}`;
+  //  
+    const taskElements = document.getElementsByClassName('task')
+    for (element of taskElements) {
+    element.remove();
+    };
 
-  const createNodeList = (class, id) => {
-    const listId = 
-  }
 
-  const hiPri = document.createElement('div'); //This is where an object would be handy to iterate through for the right keys instead of hard coding all the high, low, etc.
-  hiPri.id = 'hiPriDiv';
-  const hiNodes = document.querySelectorAll('.high-priority');
-  allTasks.push(hiPri);
+    // if (toDoList.childNodes.length > 7) {
+    //   console.log('already created');
+    // } else {
+    //   console.log('not yet created');
 
-  const medPri = document.createElement('div');
-  medPri.id = 'medPriDiv';
-  const medNodes = document.querySelectorAll('.medium-priority');
-  allTasks.push(medPri);
+    // };
+  };
+  //
+  // const divyNodes = () => {
+  // const nodeList = document.querySelectorAll(nodeClass);
+  // nodeList.forEach((task) => {priDiv.appendChild(task)});
+  // toDoList.appendChild(priDiv);
+  // };
 
-  const lowPri = document.createElement('div');
-  lowPri.id = 'lowPriDiv';
-  const lowNodes = document.querySelectorAll('.low-priority');
-  allTasks.push(lowPri);
-
-  const noPri = document.createElement('div');
-  noPri.id = 'noPriDiv';
-  const noNodes = document.querySelectorAll('.no-priority');
-  allTasks.push(noPri);
-  return allTasks;
+  createPriorities('.high-priority', 'High');
+  createPriorities('.medium-priority', 'Medium');
+  createPriorities('.low-priority', 'Low');
+  createPriorities('.no-priority', 'None');
 };
 
 
 const sortBtn = document.querySelector('#sort');
 sortBtn.addEventListener('click', sortTasks);
-
-//   makePriorities();
-
-  //If statement querying for class selector
-  //Task gets removed and appended accordingly
-// };
-
-
-
-//Iterate through the elements
-// const sort = (e) => {
-
-//   for (child in nodeList.);
-// };

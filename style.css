@@ -63,10 +63,27 @@ p {
   background-color: green;
 }
 
-div #list > div {
+/* Styling for individual tasks */
+.task {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 35px;
   padding-left: 7px;
+  min-height: 100%;
+}
+
+
+/*Styling for priority boxes */
+.priDiv {
+  display: flex;
+  flex-direction: column;
+  column-gap: 7px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 35px;
+  padding-left: 7px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
